@@ -9,4 +9,4 @@ http://www.lfd.uci.edu/~gohlke/pythonlibs/
 
 Preinstalled Anaconda/Miniconda repositories might not work.
 
-The classifier is initialized with four basic shapes - circle, square, triangle and star and is able to recognize multiple instances of these shapes drawn on the canvas. New shapes are learned by clearing the canvas, inputing the shape name, drawing the individual shape and pressing the learn shape button. Repeat for better accuracy. Make sure the drawn shapes are relatively closed(OpenCV contoure detection hierarchy needs to be implemented)
+The classifier is initialized with four basic shapes - circle, square, triangle and star and is able to recognize multiple instances of these shapes drawn on the canvas. New shapes are learned by clearing the canvas, inputing the shape name, drawing the individual shape and pressing the learn shape button. Repeat for better accuracy. Make sure the drawn shapes are relatively closed(OpenCV contoure detection hierarchy needs tweaking)
