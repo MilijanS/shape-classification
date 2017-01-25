@@ -45,6 +45,10 @@ class PaintBox(Frame):
         button4.bind('<Button-1>', self.clear_canvas)
         button4.pack() 
         
+        button5 = Button(self.myCanvas, text='Reset')
+        button5.bind('<Button-1>', self.reset)
+        button5.pack(side=BOTTOM) 
+        
         #event handler for drawing
         self.myCanvas.bind( "<B1-Motion>", self.paint)
          
@@ -61,7 +65,14 @@ class PaintBox(Frame):
         for f in os.listdir(shape_classification.drawn_images_folder_path):
             if 'drawn' in f:
                 os.remove(shape_classification.drawn_images_folder_path + "\\" +f)
-             
+                
+    def reset(self, event):
+        PaintBox.on_window_closing()
+        shape_classification.import_source_images()
+        shape_classification.import_test_images()
+        shape_classification.init_classifier()
+        PaintBox.clear_canvas(self, event)
+                
     def learn_drawn_shapes_wrapper(self, event):
         shape_classification.learn_drawn_shapes()
         self.clear_canvas()
@@ -72,6 +83,8 @@ class PaintBox(Frame):
         
         shapes_learning_pending = True
         filename = self.text_entry.get()
+        if filename == '':
+            return
         filename = (filename + '--drawn--' + str(n))
                 
         self.save_canvas_as_image(shape_classification.drawn_images_folder_path, filename + '.jpg')

@@ -14,7 +14,7 @@ source_images = [] #learned images represented as np arrays
 test_images = []
 drawn_images = []
 
-ARRAY_WIDTH, ARRAY_HEIGHT = 200, 200
+ARRAY_WIDTH, ARRAY_HEIGHT = 100, 100
 
 source_shape_types = []
 test_shape_types = []
@@ -136,7 +136,7 @@ def learn_drawn_shapes():
     drawn_images = np.array(drawn_images)
     return drawn_images
     
-
+    
 def import_source_images(show_plotted=False):
     global source_images_folder_path
     global source_images
@@ -194,13 +194,13 @@ def predict():
     shape_images = []
 
     for ti in test_images:
-        rezultat = clf.predict(ti.reshape(-1, ti.ravel().size))
+        results = clf.predict(ti.reshape(-1, ti.ravel().size))
         shape_images.append(plt.matshow(ti[0:]))
         plt.show()
         
-        print(shape_dictionary[rezultat[0]])
-        print(rezultat[0])
-        shape_names.append(shape_dictionary[rezultat[0]])
+        print(shape_dictionary[results[0]])
+        print(results[0])
+        shape_names.append(shape_dictionary[results[0]])
     
     n, _p, _q = test_images.shape   
     print(n, 'shapes currently on the canvas')
