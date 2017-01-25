@@ -5,7 +5,7 @@
 -OpenCV 3.2.0
 -Pillow 4.0.0 
 
-Python tool capable of machine learning new shapes/digits/letters from shapes drawn on the screen using a mouse. Capable of identifying and labeling multiple instances of learned shapes on the screen. 
+Python tool capable of machine learning new shapes/digits/letters from shapes drawn on the screen using the mouse. Capable of identifying and labeling multiple instances of learned shapes on the screen. 
 
 *Packages downloaded from Unofficial Windows Binaries for Python Extension Packages page at:
 http://www.lfd.uci.edu/~gohlke/pythonlibs/
