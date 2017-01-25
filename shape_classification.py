@@ -13,8 +13,8 @@ drawn_images_folder_path = r'drawn images'
 source_images = [] #learned images represented as np arrays
 test_images = []
 drawn_images = []
-#numpy array representing a single shape - can go as low as 32x32, 200x200 for accuracy
-ARRAY_WIDTH, ARRAY_HEIGHT = 200, 200
+#numpy array representing a single shape - can go as low as 15x15, 100x100 for accuracy
+ARRAY_WIDTH, ARRAY_HEIGHT = 100, 100
 
 source_shape_types = []
 test_shape_types = []
