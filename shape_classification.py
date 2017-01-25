@@ -199,7 +199,7 @@ def predict():
         plt.show()
         
         print(shape_dictionary[results[0]])
-        print(rezultat[0])
+        print(results[0])
         shape_names.append(shape_dictionary[results[0]])
     
     n, _p, _q = test_images.shape   
