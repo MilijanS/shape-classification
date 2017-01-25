@@ -5,7 +5,6 @@ import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 
-
 source_images_folder_path = r'source images'
 test_images_folder_path = r'test image'
 drawn_images_folder_path = r'drawn images'
