@@ -13,7 +13,7 @@ drawn_images_folder_path = r'drawn images'
 source_images = [] #learned images represented as np arrays
 test_images = []
 drawn_images = []
-#numpy array representing a single shape - can go as low as 15x15, 100x100 for accuracy
+
 ARRAY_WIDTH, ARRAY_HEIGHT = 100, 100
 
 source_shape_types = []
@@ -136,7 +136,7 @@ def learn_drawn_shapes():
     drawn_images = np.array(drawn_images)
     return drawn_images
     
-
+    
 def import_source_images(show_plotted=False):
     global source_images_folder_path
     global source_images
