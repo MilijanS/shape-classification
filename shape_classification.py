@@ -194,13 +194,13 @@ def predict():
     shape_images = []
 
     for ti in test_images:
-        rezultat = clf.predict(ti.reshape(-1, ti.ravel().size))
+        results = clf.predict(ti.reshape(-1, ti.ravel().size))
         shape_images.append(plt.matshow(ti[0:]))
         plt.show()
         
-        print(shape_dictionary[rezultat[0]])
+        print(shape_dictionary[results[0]])
         print(rezultat[0])
-        shape_names.append(shape_dictionary[rezultat[0]])
+        shape_names.append(shape_dictionary[results[0]])
     
     n, _p, _q = test_images.shape   
     print(n, 'shapes currently on the canvas')
