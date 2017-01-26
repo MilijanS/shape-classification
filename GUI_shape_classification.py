@@ -41,13 +41,13 @@ class PaintBox(Frame):
         button3 = Button(self.myCanvas, text='Predict')
         button3.bind('<Button-1>', self.predict_wrapper)
         button3.pack(side=TOP) 
-        
+            
         button4 = Button(self.myCanvas, text='Clear')
         button4.bind('<Button-1>', self.clear_canvas)
-        button4.pack() 
+        button4.pack()
         
         button5 = Button(self.myCanvas, text='Reset')
-        button5.bind('<Button-1>', self.reset)
+        button5.bind('<ButtonRelease-1>', self.reset_classifier)
         button5.pack(side=BOTTOM) 
         
         #event handler for drawing
@@ -68,7 +68,9 @@ class PaintBox(Frame):
             if 'drawn' in f:
                 os.remove(shape_classification.drawn_images_folder_path + "\\" +f)
                 
-    def reset(self, event):
+    def reset_classifier(self, event):
+        print('gui reset')
+        
         PaintBox.on_window_closing()
         shape_classification.import_source_images()
         shape_classification.import_test_images()
@@ -162,4 +164,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
