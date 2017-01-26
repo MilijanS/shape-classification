@@ -139,9 +139,7 @@ class PaintBox(Frame):
        ofs = 5
        x1, y1 = (event.x - ofs ), (event.y - ofs )
        x2, y2 = (event.x + ofs ), (event.y + ofs )
-       
        #self.myCanvas.create_oval( x1, y1, x2, y2, fill='black')
-       
        self.draw.ellipse((x1, y1, x2, y2), fill='black')
        
        if self.old_x and self.old_y:
