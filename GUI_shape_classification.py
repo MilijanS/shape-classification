@@ -5,12 +5,10 @@ import os
 import shape_classification
 import cv2
 
-
 white = (255, 255, 255)
 black = (0, 0, 0)
 n = 0
 shapes_learning_pending = False
-
 
 class PaintBox(Frame):    
     
