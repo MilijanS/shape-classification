@@ -4,7 +4,7 @@ from sklearn import svm
 import numpy as np
 import cv2
 from matplotlib import pyplot as plt
-
+import concurrent.futures
 
 source_images_folder_path = r'source images'
 test_images_folder_path = r'test image'
@@ -136,24 +136,48 @@ def learn_drawn_shapes():
     drawn_images = np.array(drawn_images)
     return drawn_images
     
+"""    
+def import_single_source_image(src_images_folder_path, filename, src_shape_types, src_images):
     
-def import_source_images(show_plotted=False):
+    global source_images
+    global source_images_folder_path
+    global source_shape_types
+    
+    image_array = create_image_array(src_images_folder_path, filename, src_shape_types)
+    source_images.append(image_array)
+    add_type_to_list(src_shape_types, filename)
+    
+    print("Imported an image")
+"""    
+    
+    
+    
+    
+def import_source_images():
     global source_images_folder_path
     global source_images
     global source_shape_types
     
     source_shape_types = []
     source_images = []
+
+    filenames = os.listdir(source_images_folder_path)
+
     
-    for f in os.listdir(source_images_folder_path):    
+    for f in filenames:    
+        
         
         image_array = create_image_array(source_images_folder_path, f, source_shape_types)
         source_images.append(image_array)
         add_type_to_list(source_shape_types, f)
         
-        if show_plotted:
-            plt.matshow(image_array)
-            plt.show()
+        """
+        with concurrent.futures.ThreadPoolExecutor(max_workers=100) as executor:            
+            future_to_f = {executor.submit(import_single_source_image, source_images_folder_path, f, source_shape_types): f for f in filenames}   
+        """
+        
+        
+
             
 def import_test_images():
     
