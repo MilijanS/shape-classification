@@ -9,3 +9,5 @@ http://www.lfd.uci.edu/~gohlke/pythonlibs/
 
 Preinstalled Anaconda/Miniconda repositories might not work.
 
+Video example:
+https://www.youtube.com/watch?v=2ESk24-pV90
