@@ -26,7 +26,6 @@ clf = svm.SVC(kernel='linear')
 number_of_types = 4
 
 def add_type_to_list(shape_array, filename):
-    
     global number_of_types
     
     if 'circle' in filename:
@@ -100,7 +99,6 @@ def split_test_image_into_np_shapes(folder_path, filename):
     (im, contours, hier) = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     
     for fragment in contours:
-        
         crop_coordinates = cv2.boundingRect(fragment)
     
         image = PIL.Image.open(image_path)
@@ -151,8 +149,6 @@ def import_single_source_image(src_images_folder_path, filename, src_shape_types
 """    
     
     
-    
-    
 def import_source_images():
     global source_images_folder_path
     global source_images
@@ -165,8 +161,6 @@ def import_source_images():
 
     
     for f in filenames:    
-        
-        
         image_array = create_image_array(source_images_folder_path, f, source_shape_types)
         source_images.append(image_array)
         add_type_to_list(source_shape_types, f)
@@ -177,10 +171,7 @@ def import_source_images():
         """
         
         
-
-            
 def import_test_images():
-    
     global test_images 
     test_images = []
     test_borders = []
@@ -196,8 +187,7 @@ def import_test_images():
     
     return test_borders
 
-def init_classifier():
-    
+def init_classifier():   
     global source_shape_types    
     global source_images
     global test_images
@@ -213,7 +203,6 @@ def init_classifier():
     clf.fit(source_images.reshape(len(source_images),-1)[:], source_shape_types[:])
     
 def predict():
-    
     shape_names = []       
     shape_images = []
 
